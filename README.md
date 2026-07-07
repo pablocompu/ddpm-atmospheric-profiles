@@ -43,14 +43,13 @@ pip install torch numpy pandas scipy matplotlib tqdm easydict
 
 ## Data
 
-Two CSV files are required:
+| File | Source | Description |
+|---|---|---|
+| `sondeos_interpolados.csv` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21238090.svg)](https://doi.org/10.5281/zenodo.21238090) | Radiosonde profiles interpolated to a uniform 311-level height grid (105 – 3 205 m, 10 m step). Columns: `Fecha`, `HGHT`, `TEMP`, `MIXR`, `SKNT`. |
+| `era5_boxtfe.csv` | This repository (`era5_boxtfe.zip`) | Daily ERA5 synoptic variables for the Tenerife region. Columns: `fecha`, plus 23 meteorological fields (pressure, temperature, humidity, wind, geopotential at multiple levels). |
+| `eval_cache.pkl` | This repository | Pre-computed inference results for all 1 581 test profiles (see [Cache-based figure generation](#cache-based-figure-generation)). |
 
-| File | Description |
-|---|---|
-| `sondeos_interpolados.csv` | Radiosonde profiles interpolated to a uniform 311-level height grid (105 – 3 205 m, 10 m step). Columns: `Fecha`, `HGHT`, `TEMP`, `MIXR`, `SKNT`. |
-| `era5_boxtfe.csv` | Daily ERA5 synoptic variables for the Tenerife region. Columns: `fecha`, plus 23 meteorological fields (pressure, temperature, humidity, wind, geopotential at multiple levels). |
-
-By default every script looks for these files in the **current working directory**. Pass `--profiles-csv` and `--synoptic-csv` to point to a different location.
+Download `sondeos_interpolados.csv` from Zenodo and unzip `era5_boxtfe.zip` before running any script. By default every script looks for these files in the **current working directory**. Pass `--profiles-csv` and `--synoptic-csv` to point to a different location.
 
 ---
 
